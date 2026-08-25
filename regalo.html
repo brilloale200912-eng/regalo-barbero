@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi amor 💈❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #171717, #3b3030, #151515);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.pantalla {
+    display: none;
+    min-height: 100vh;
+    padding: 35px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: aparecer .7s ease;
+}
+
+.pantalla.activa {
+    display: flex;
+}
+
+.contenido {
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+button {
+    border: none;
+    padding: 15px 25px;
+    margin: 8px;
+    border-radius: 30px;
+    background: #d8a75c;
+    color: #171717;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.secundario {
+    background: #ffffff20;
+    color: white;
+    border: 1px solid #ffffff50;
+}
+
+.foto {
+    width: 100%;
+    max-width: 420px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 25px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 0 30px #000;
+}
+
+.corazon {
+    position: fixed;
+    font-size: 25px;
+    animation: caer 4s linear forwards;
+    pointer-events: none;
+}
+
+.grande {
+    font-size: 4rem;
+    font-weight: bold;
+    animation: latir 1s infinite;
+}
+
+.oculto {
+    display: none;
+}
+
+.carta {
+    background: #ffffff12;
+    border: 1px solid #ffffff30;
+    border-radius: 25px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes latir {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes caer {
+    from {
+        transform: translateY(-50px) rotate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PANTALLA 1 -->
+<section class="pantalla activa" id="p1">
+<div class="contenido">
+
+    <div style="font-size:70px;">💈❤️</div>
+
+    <h1>Para mi amor,<br>el barbero que se ganó mi corazón</h1>
+
+    <p>
+        Amor, preparé algo pequeñito para ti... 🥹❤️
+        <br><br>
+        Pero tienes que seguir las instrucciones 👀
+    </p>
+
+    <button onclick="ir(2)">Empezar 💗</button>
+
+</div>
+</section>
+
+
+<!-- PANTALLA 2 -->
+<section class="pantalla" id="p2">
+<div class="contenido">
+
+    <h2>Primera prueba 😂</h2>
+
+    <p>
+        Antes de continuar necesito comprobar algo...
+        <br><br>
+        <b>¿Eres realmente mi barbero favorito?</b> 💈👀
+    </p>
+
+    <button onclick="ir(3)">Obviamente sí 😌❤️</button>
+
+    <button class="secundario" id="no" onclick="escapar()">
+        No sé 🤨
+    </button>
+
+</div>
+</section>
+
+
+<!-- PANTALLA 3 -->
+<section class="pantalla" id="p3">
+<div class="contenido">
+
+    <div style="font-size:60px;">🥹❤️</div>
+
+    <h2>Ahora sí...</h2>
+
+    <p>
+        Amor, hoy quiero aprovechar este día para recordarte
+        lo especial que eres para mí.
+        <br><br>
+
+        Gracias por haber aparecido en mi vida, por quererme,
+        por estar conmigo y por dejarme compartir contigo
+        momentos que significan muchísimo para mí.
+        <br><br>
+
+        Me haces muy feliz y me encanta tenerte en mi vida. ❤️
+    </p>
+
+    <button onclick="ir(4)">Hay algo más... 👀</button>
+
+</div>
+</section>
+
+
+<!-- PANTALLA 4 -->
+<section class="pantalla" id="p4">
+<div class="contenido">
+
+    <h2>Unos recuerdos que quiero guardar siempre 📸❤️</h2>
+
+    <img src="foto1.jpg" class="foto">
+
+    <p>
+        Este momento lo guardo con muchísimo cariño.
+        ❤️
+    </p>
+
+    <button onclick="ir(5)">Siguiente 📸</button>
+
+</div>
+</section>
+
+
+<!-- PANTALLA 5 -->
+<section class="pantalla" id="p5">
+<div class="contenido">
+
+    <h2>Y este también... 🥹</h2>
+
+    <img src="foto2.jpg" class="foto">
+
+    <p>
+        Porque cada recuerdo contigo termina siendo
+        uno de mis favoritos. ❤️
+    </p>
+
+    <button onclick="ir(6)">Continuar 💗</button>
+
+</div>
+</section>
+
+
+<!-- PANTALLA 6 -->
+<section class="pantalla" id="p6">
+<div class="contenido">
+
+    <div style="font-size:60px;">💌</div>
+
+    <h2>Para ti, amor</h2>
+
+    <div class="carta">
+
+        <p>
+            No sé exactamente en qué momento llegaste a formar
+            una parte tan bonita de mi vida, pero me alegra
+            muchísimo que hayas aparecido.
+        </p>
+
+        <p>
+            Gracias por amarme, por estar conmigo,
+            por hacerme sentir querida y por todos esos
+            pequeños momentos que hacen que estar contigo
+            sea tan especial.
+        </p>
+
+        <p>
+            Espero poder seguir creando muchos recuerdos
+            contigo y que nunca olvides lo muchísimo que
+            significas para mí. ❤️
+        </p>
+
+    </div>
+
+    <button onclick="ir(7)">
+        Abrir mi último regalo 🎁
+    </button>
+
+</div>
+</section>
+
+
+<!-- PANTALLA 7 -->
+<section class="pantalla" id="p7">
+<div class="contenido">
+
+    <h2>Feliz Día del Barbero, amor 💈❤️</h2>
+
+    <p>
+        Espero que nunca olvides que, además de admirar
+        al barbero que eres, quiero muchísimo a la persona
+        que está detrás de esas tijeras. 🥹❤️
+    </p>
+
+    <button onclick="ir(8)">
+        Todavía falta algo... 👀
+    </button>
+
+</div>
+</section>
+
+
+<!-- PANTALLA 8 -->
+<section class="pantalla" id="p8">
+<div class="contenido">
+
+    <div style="font-size:70px;">💈</div>
+
+    <div class="grande">
+        TE AMO ❤️
+    </div>
+
+    <p style="margin-top:30px;">
+        Muchísimo. 🥹❤️
+    </p>
+
+    <button onclick="mostrarSecreto()">
+        🔐 Desbloquear mensaje secreto
+    </button>
+
+    <div id="secreto" class="oculto">
+
+        <div class="carta" style="margin-top:25px;">
+
+            <h2>🔓 Mensaje desbloqueado</h2>
+
+            <p>
+                Si llegaste hasta aquí significa que hiciste
+                todas las pruebas JAJAJA. 😂❤️
+            </p>
+
+            <p>
+                Así que aquí va la verdad:
+                <br><br>
+
+                <b>
+                Eres una persona demasiado especial para mí
+                y me siento muy feliz de poder llamarte mi amor.
+                </b>
+            </p>
+
+            <p>
+                Feliz Día del Barbero, mi amor. 💈❤️
+                <br><br>
+                Gracias por existir y por formar parte de mi vida.
+                🥹❤️
+            </p>
+
+            <div style="font-size:45px;">
+                💈 ✂️ ❤️ 🥹 ❤️ ✂️ 💈
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<script>
+
+function ir(numero) {
+
+    document.querySelectorAll(".pantalla")
+        .forEach(p => p.classList.remove("activa"));
+
+    document.getElementById("p" + numero)
+        .classList.add("activa");
+
+    corazones();
+}
+
+
+function escapar() {
+
+    const boton = document.getElementById("no");
+
+    boton.style.position = "fixed";
+
+    boton.style.left =
+        Math.random() * 70 + 10 + "%";
+
+    boton.style.top =
+        Math.random() * 70 + 10 + "%";
+}
+
+
+function corazones() {
+
+    for(let i = 0; i < 15; i++) {
+
+        const c = document.createElement("div");
+
+        c.className = "corazon";
+
+        c.innerHTML =
+            ["❤️","💗","💕","💖","🥹"][Math.floor(Math.random()*5)];
+
+        c.style.left =
+            Math.random() * 100 + "vw";
+
+        c.style.animationDuration =
+            (2 + Math.random()*3) + "s";
+
+        document.body.appendChild(c);
+
+        setTimeout(() => {
+            c.remove();
+        }, 5000);
+    }
+}
+
+
+function mostrarSecreto() {
+
+    document.getElementById("secreto")
+        .style.display = "block";
+
+    corazones();
+
+}
+
+</script>
+
+</body>
+</html>
